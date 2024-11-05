@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="mo.js"></script>
+    <style>
+        /* Fondo oscuro detrás del modal */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 999;
+        }
+
+        /* Estilo para el modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 320px;
+            padding: 25px;
+            background-color: #1A191B;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            border-radius: 10px;
+            z-index: 1000;
+            text-align: center;
+            color: #FFD700;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Estilo del contenido y el input */
+        .modal label {
+            font-size: 14px;
+            color: #FFD700;
+            text-align: left;
+            margin-bottom: 5px;
+            display: inline-block;
+        }
+        
+        .modal input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #A34EE5;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-size: 14px;
+            background-color: #333;
+            color: #FFD700;
+            box-sizing: border-box;
+        }
+
+        .modal input::placeholder {
+            color: #A3A3A3;
+        }
+
+        /* Estilos de botones */
+        .close-btn, .close-cerrar {
+            background: #FFD700;
+            color: #1A191B;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 15px;
+            width: 100%;
+            font-weight: bold;
+            font-size: 15px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        /* Hover de los botones */
+        .close-btn:hover, .close-cerrar:hover {
+            background-color: #A34EE5;
+            color: #FFD700;
+            border: solid 2px #FFD700;
+        }
+
+        /* Efecto en el contenido del modal */
+        #content {
+            color: #FFD700;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="overlay" class="overlay"></div>
+
+    <div id="modal" class="modal">
+        <form action="resivido.php" method="post">
+            <div id="content"></div>
+            <button type="submit" class="close-btn" onclick="closeModal()">enviar</button>
+            <button type="button"  class="close-cerrar" onclick="closeModal()">Cerrar</button>
+        </form>
+    </div>
+    
+    <script src="mo.js"></script>
+    </body>
+</html>
